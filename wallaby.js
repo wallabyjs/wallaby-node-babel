@@ -11,20 +11,13 @@ module.exports = function (wallaby) {
 
     env: {
       type: 'node',
-      runner: 'node',
-      params: {
-        env: 'NODE_ENV=test',
-        runner: '--harmony'
-      }
+      runner: 'node'
     },
 
     testFramework: 'mocha',
 
     compilers: {
-      '**/*.js': wallaby.compilers.babel({
-        babel: require('babel-core'),
-        presets: ['es2015', 'stage-0']
-      })
+      '**/*.js': wallaby.compilers.babel()
     },
 
     setup: function () {
